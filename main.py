@@ -25,7 +25,9 @@ def home():
     url = "https://hidden-journey-62459.herokuapp.com/piglatinize/"
     payload = {"input_text":fact}
     resp = requests.post(url, data=payload, allow_redirects=False)
-    return resp.headers['location']
+    heads = resp.headers['location']
+    return '<a href={} target="_blank">{}</a>'.format(heads, heads)
+
 
 
 if __name__ == "__main__":
