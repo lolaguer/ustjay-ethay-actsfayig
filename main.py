@@ -26,7 +26,9 @@ def home():
     payload = {"input_text":fact}
     resp = requests.post(url, data=payload, allow_redirects=False)
     heads = resp.headers['location']
-    return '<a href={} target="_blank">{}</a>'.format(heads, heads)
+    return """<h2>Random sentence:</h2><h4>{}</h4>
+              <h2>Pig Latin:</h2>
+              <a href={} target="_blank">{}</a>""".format(fact, heads, heads)
 
 
 
